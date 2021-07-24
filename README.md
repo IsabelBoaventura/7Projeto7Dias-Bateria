@@ -1,7 +1,9 @@
-# 7Projeto7Dias-Bateria
+# Projeto B7Web
+
 7 Projetos em 7 dias 
 
-Baseado no Projeto do b7 web
+Projetos do B7 web
+Bonieky Lacerda - https://b7web.com.br/
 
 Projeto 01 - Bateria
 
