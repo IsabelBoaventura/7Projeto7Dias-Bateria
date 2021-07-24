@@ -3,6 +3,7 @@
 7 Projetos em 7 dias 
 
 Baseado no Projeto do b7 web
+Bonieky Lacerda - https://b7web.com.br/
 
 Projeto 01 - Bateria
 
