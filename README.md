@@ -24,10 +24,3 @@ Projeto 06 -
 
 Projeto 07 - 
 
-Teste para  o UCHOA 
-![image](https://user-images.githubusercontent.com/1613816/127001167-79aa01f0-1b52-4d32-b034-d7d2cef39d63.png)
-
-
-![image](https://user-images.githubusercontent.com/1613816/127001317-e609e70c-dd07-44b5-913e-4e1c98df8156.png)
-
-
