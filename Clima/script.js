@@ -54,7 +54,8 @@ function showInfo( info ){
     showWarning('');
     document.querySelector('.resultado').style.display= 'block';
     document.querySelector('.titulo').innerHTML = `${info.name}, ${info.country}`;
-    document.querySelector('.tempInfo').innerHTML = `${info.temp}<sup>ºC</sup>`; 
+    document.querySelector('.tempInfo').innerHTML = `${info.temp}<sup>ºC</sup>`;
+    document.querySelector('.ventoInfo').innerHTML = `${info.windSpeed}<span>km/h</span>`;
 
 }
 
