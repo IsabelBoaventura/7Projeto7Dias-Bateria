@@ -1,0 +1,42 @@
+Para ter as informaçõe do clima das cidades do mundo, tem de fazer uma conta em um site
+
+openweathermap.org
+
+usuario: Isabel_Boaventura
+email: boaventuraisabel31@gmail.com
+senha: climab7web
+
+para fazer requisições neste site, usaremos uma API deste site. 
+
+
+( menu principal) API -> Current Weather Data -> Api Doc
+Documentação do sistema
+
+https://openweathermap.org/current
+
+Buscando pelo nome da cidade, 3 possibilidades: 
+
+api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+api.openweathermap.org/data/2.5/weather?q={city name},{state code}&appid={API key}
+
+api.openweathermap.org/data/2.5/weather?q={city name},{state code},{country code}&appid={API key}
+
+Para ter o API Key 
+será dentro do site -> seu nome de usuário -> My API Keys
+
+key
+1615692aef425960d1fd6061ae9147ca
+
+
+leva de umas duas ou tres horas para funcionar 
+há outros parametros que podem vir do sistema 
+
+
+units = metric
+lang = pt_br
+
+Pode se ver o resultado da requisição tanto na aba console como na aba Network
+
+
+
