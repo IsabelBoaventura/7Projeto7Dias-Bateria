@@ -56,6 +56,11 @@ function showInfo( info ){
     document.querySelector('.titulo').innerHTML = `${info.name}, ${info.country}`;
     document.querySelector('.tempInfo').innerHTML = `${info.temp}<sup>ºC</sup>`;
     document.querySelector('.ventoInfo').innerHTML = `${info.windSpeed}<span>km/h</span>`;
+    document.querySelector('.temp img').setAttribute('src', `http://openweathermap.org/img/wn/${info.tempIcon}@2x.png`);
+    //seleciona a classe 'temp' a img que estiver dentro desta classe 
+    //trocar a informação que esta dentro do Atributo de img ( imagem ) com o nome 'src' pela informação passada
+    document.querySelector('.ventoPonto').style.transform = `rotate(${info.windAngle-90}deg)`;
+    //[43 minutos de video]
 
 }
 
