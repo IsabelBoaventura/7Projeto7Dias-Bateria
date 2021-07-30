@@ -1,7 +1,7 @@
 //entender o html para conseguir complementar ele 
 //data-item identifica cada casa
-//jogo geralmente tem no mÌnimo 3 etapas diferentes 
-// 1 - Dados iniciais ( o que precisa ter para o jogo comeÁar a funcionar )
+//jogo geralmente tem no m√≠nimo 3 etapas diferentes 
+// 1 - Dados iniciais ( o que precisa ter para o jogo come√ßar a funcionar )
 // 2 - Eventos
 // 3 - funcoes que auxiliam o evento a acontecer 
 
@@ -14,7 +14,7 @@ let square = {
 }; // isto pe um objeto
 
 
-let player  = '';//vez de quem  È 
+let player  = '';//vez de quem  √© 
 let warning ='';//quem ganhou
 let playing = false ; ///descobrir se o jogo esta acontecendo
 
@@ -26,13 +26,33 @@ reset(); // para iniciar limpando
 //Eventos 
 //botao de resetar 
 document.querySelector('.reset').addEventListener('click', reset);
+// agora para marcar ou saber quem esta sendo marcado 
+//document.querySelector('div[data-item=a1]').addEventListener('click', itemClick);
+//document.querySelector('div[data-item=a2]').addEventListener('click', itemClick);
+//document.querySelector('div[data-item=a3]').addEventListener('click', itemClick);
+//desta maneira ja estou vendo que ser√° muito lento,  pois tera de olhar cada um dos itens 
+// e se o jogo da velha tivesse 9 * 9 itens - inviavel no meu entender assim 
+
+// opcao 2 -  para monitorar onde foi clicado 
+document.querySelectorAll('.item').forEach(item =>{
+    item.addEventListener('click', itemClick);
+});
+ //desta forma pega todos os que estao com a classe item  e percorre com o foreach 
+ // [ 25 minutos de video ]
+
+
 
 //Funcoes
+
+
+function itemClick(){
+
+}
 
 //funcao para resetar 
 function reset (){
     warning='';
-    //escolher o que ir· iniciar 
+    //escolher o que ir√° iniciar 
     let random = Math.floor(Math.random()*2);
     player = ( random ===0 )? 'X' : 'O';
     //if( random === 0){
@@ -44,23 +64,23 @@ function reset (){
     //zerar os quadros
     //objeto em javascrit pode ser acessado por square.a1 assim como por square['a1']
     for (let i in square){
-        square[i] = ''; // limpa os dados da memÛria mas nao da tela       
+        square[i] = ''; // limpa os dados da mem√≥ria mas nao da tela       
 
     }
 
     playing = true;// jogando
     
-    renderSquare();// reiniciar a pontuaÁ„o do jogo
-    renderInfo(); // reiniciar a informaÁ„o do jogo
+    renderSquare();// reiniciar a pontua√ß√£o do jogo
+    renderInfo(); // reiniciar a informa√ß√£o do jogo
 
 }
 
 
 function renderSquare(){
-    //percorre o quadro, se tivr alguma informaÁ„o preenchida coloca no HTML
+    //percorre o quadro, se tivr alguma informa√ß√£o preenchida coloca no HTML
     for(  let i in square){
         //console.log("ITEM: ", i,  square.i);
-        //atÈ aqui vimos o campo,  mas n„o a informaÁ„o do campo
+        //at√© aqui vimos o campo,  mas n√£o a informa√ß√£o do campo
         //agora selecionar o que esta no HTML
         let item = document.querySelector(`div[data-item=${i}]`);
         //if ( square[i] !== ''){
@@ -82,3 +102,5 @@ function renderInfo(){
     // [ video em 21 minutos ]
 
 }
+
+//agora precisa clicar na tela e marcar - events 
