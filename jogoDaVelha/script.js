@@ -37,6 +37,7 @@ document.querySelector('.reset').addEventListener('click', reset);
 document.querySelectorAll('.item').forEach(item =>{
     item.addEventListener('click', itemClick);
 });
+//pega todos os itens , seleciona cada um deles, e adiciona o evento de click
  //desta forma pega todos os que estao com a classe item  e percorre com o foreach 
  // [ 25 minutos de video ]
 
@@ -45,7 +46,30 @@ document.querySelectorAll('.item').forEach(item =>{
 //Funcoes
 
 
-function itemClick(){
+function itemClick( event ){
+    //identificar em quem clicou 
+    //console.log(event.target);
+    //mostra todo o div onde foi clicado
+    //agora pegar o atributo data-item
+    let item = event.target.getAttribute('data-item');
+    //console.log(' Clicou em ', item );
+    //com o item descobre em quem clicou 
+
+    //agora marcar se estiver vazio
+
+    if(square[item] === ''){
+        // preenche com o player
+        square[item] = player;
+        //para mostrar na tela 
+        renderSquare();
+
+        //a cada jogada é necessario mudar o jogador
+        togglePlayer();
+
+    }
+
+
+
 
 }
 
@@ -93,6 +117,9 @@ function renderSquare(){
         item.innerHTML = square[i];
     }
 
+    // a cada jogada verificar se alguém já ganhou 
+    checkGame();
+
 }
 
 function renderInfo(){
@@ -104,3 +131,73 @@ function renderInfo(){
 }
 
 //agora precisa clicar na tela e marcar - events 
+
+
+//funcao para trocar de jogador
+function togglePlayer(){
+    //apenas altera de jogador
+    //if( player === 'X'){
+        //player = 'O';
+    //}else{
+        //player = 'X'  
+    //}
+
+    // lembrando de simplificar o IF  com o 'ternario'
+    player = ( player === 'X')? 'O': 'X';
+
+    //quando troca as informações manda exibir na tela 
+    renderInfo(); //a vez é 
+
+}
+
+
+function checkGame(){
+    // Há 4 opções para esta situação 
+    // 1- X ganhou
+    // 2 - 0  ganhou
+    // 3 - Empate
+    // 4 - nada aconteceu
+
+    //saber quais as opções de vitoria e ver se algum deles ganhou
+
+    if( checkWinnerFor('X')){
+        warning = 'O "X" Venceu!';
+        playing = false;
+    }else if( checkWinnerFor('O')) {
+        warning = 'O "O" Venceu!';
+        playing = false;
+    }else if(  isFull()){
+        warning = 'Deu Empate!';
+        playing = false;
+    }else{
+        playing = true;  
+    }
+
+
+}
+
+function checkWinnerFor( player ){
+    let pos = [
+        'a1,a2,a3',
+        'b1,b2,b3',
+        'c1,c2,c3',
+        
+        'a1,b2,c3',
+        'a3,b2,c1',
+        
+        'a1,b1,c1',
+        'a2,b2,c2',
+        'a3,b3,c3'
+    ]; // as possibilidades de vencer
+
+    //verificar se o player esta nestas possibilidades 
+
+    for ( let w in pos ){
+        let pArray = pos[w].split(',');
+
+    //[ 38 minutos de video ]
+}
+
+function isFull(){
+
+}
