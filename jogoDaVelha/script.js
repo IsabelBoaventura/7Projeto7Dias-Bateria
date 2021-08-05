@@ -55,9 +55,9 @@ function itemClick( event ){
     //console.log(' Clicou em ', item );
     //com o item descobre em quem clicou 
 
-    //agora marcar se estiver vazio
+    //agora marcar se estiver vazio e se o jogando ainda estiver ativo
 
-    if(square[item] === ''){
+    if(playing && square[item] === ''){
         // preenche com o player
         square[item] = player;
         //para mostrar na tela 
@@ -194,10 +194,42 @@ function checkWinnerFor( player ){
 
     for ( let w in pos ){
         let pArray = pos[w].split(',');
+        //verifica se a posicao do player esta preenchida 
+        //every funcao do array
 
-    //[ 38 minutos de video ]
+        //option é cada um dos pontos da array, neste caso cada uma das opçoes 
+        /*
+        pArray.every( ( option)=>{
+            if( square[option] === player){
+                return true;
+            }else{
+               return false; 
+            }
+        });
+        */
+
+        // fazendo de uma forma mais simplificada
+        //pArray.every((option)=>{ return (square[option] === player);}) ;
+
+        // simplificando 2: quando a função so tem um retorno 
+        //pArray.every( (option) => (square[option] === player));
+
+        //simplificando 3:  sendo o option com um parametro unico
+        let hasWon = pArray.every( option => square[option] === player);
+
+        if( hasWon ){ return true;   }
+    }
+    // se passar por todo o for e nao achar o vencedor 
+    return false;
 }
 
 function isFull(){
+    //loop no square e verificar se todo esta preenchido 
+    for ( let i in square){
+        if ( square[i] === ''){
+            return false;
+        }
+    }
+    return true;
 
 }
