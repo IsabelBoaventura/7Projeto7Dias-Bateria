@@ -20,7 +20,11 @@ Manipulção de API, Requisição Interna da API, Manipulação de json, objeto,
 
 Obs.: VSCode do trabalho deixo com o Windows 1252,  para ser mais prático decidi não trocar,  por isto do erro no simbolo de graus.
 
-Projeto 04 - 
+# Projeto 04 -  Jogo da Velha
+A partir de váriaveis e lógicas, preenchendo o tabuleiro na tela.
+![image](https://user-images.githubusercontent.com/1613816/128389057-228884c6-271f-496a-99d2-61f66ccde74a.png)
+
+
 
 Projeto 05 - 
 
