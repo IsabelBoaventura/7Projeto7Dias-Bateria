@@ -26,7 +26,7 @@ A partir de váriaveis e lógicas, preenchendo o tabuleiro na tela.
 
 
 
-Projeto 05 - Canvas
+# Projeto 05 - Canvas
 Escolher cores. Verificar posições. Funções do javascript do mouse, e do canvas.
 ![image](https://user-images.githubusercontent.com/1613816/128638311-1836a0a6-62a1-42b2-a68f-0a6546f9db17.png)
 
