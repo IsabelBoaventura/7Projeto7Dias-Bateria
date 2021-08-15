@@ -31,7 +31,10 @@ Escolher cores. Verificar posições. Funções do javascript do mouse, e do can
 ![image](https://user-images.githubusercontent.com/1613816/128638311-1836a0a6-62a1-42b2-a68f-0a6546f9db17.png)
 
 
-Projeto 06 - 
+# Projeto 06 - Quiz
+![image](https://user-images.githubusercontent.com/1613816/129488615-69b0c7f0-c81c-4fe3-a343-d3abefafb3b6.png) ![image](https://user-images.githubusercontent.com/1613816/129488631-41b03f0e-a885-4636-8762-a51d372d7161.png)
+
+
 
 Projeto 07 - 
 
