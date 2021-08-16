@@ -39,5 +39,8 @@ Escolher cores. Verificar posições. Funções do javascript do mouse, e do can
 
 # Projeto 07 - Arrasta e Solta
 Mover itens para zonas específicas.
-Target e CurrentTarget: target pega o ponto específico onde foi clicado e CurrentTarget pega o ponto geral do evento.
+
+Target e CurrentTarget: target pega o ponto específico onde foi clicado e CurrentTarget pega o ponto geral do evento com os elementos que há no evento.
+![image](https://user-images.githubusercontent.com/1613816/129498155-5b9d6b0c-4000-42bb-b116-428fdd89aa61.png)
+Imagem acima mostra o console com o conteúdo de Target e de CurrentTarget. 
 
