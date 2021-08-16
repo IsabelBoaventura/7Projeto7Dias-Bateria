@@ -37,5 +37,6 @@ Escolher cores. Verificar posições. Funções do javascript do mouse, e do can
 
 
 
-Projeto 07 - 
+# Projeto 07 - Arrasta e Solta
+Mover itens para zonas específicas; 
 
