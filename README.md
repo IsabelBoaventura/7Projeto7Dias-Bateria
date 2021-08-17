@@ -47,3 +47,6 @@ Imagem acima mostra o console com o conteúdo de Target e de CurrentTarget. Onde
 
 Atributo do HTML **draggable**, conforme o próprio VSCode significa: "Um atributo enumerado indicando se o elemento pode ser arrastado, usando a **Drag and Drop API** (API arrastar e soltar). Pode ter os seguintes valores: **true**, o que indica que o elemento pode ser arrastado; e **false**, o que indica que o elemento não pode ser arrastado.
 
+![image](https://user-images.githubusercontent.com/1613816/129768913-faff8d8c-7e17-4cff-a5db-811fba33c242.png)
+
+
