@@ -1,4 +1,3 @@
-
 /**
 document.querySelector('.neutralArea').addEventListener('click', (e) => {
     console.log(" Target ", e.target);
@@ -41,6 +40,13 @@ document.querySelector('.neutralArea').addEventListener( 'dragover', dragOverNeu
 document.querySelector('.neutralArea').addEventListener( 'dragleave', dragLeaveNeutral);
 document.querySelector('.neutralArea').addEventListener( 'drop', dropNeutral);
 
+//para ordenar as informações existentes nas caixas de baixo
+let areas = {
+    a: null,
+    b: null, 
+    c: null
+};
+
 
 /**Functions Item */
 //class dragging - deixa a cor do elemento opaca
@@ -52,7 +58,6 @@ function dragStart(e){
 function dragEnd(e){
     e.currentTarget.classList.remove('dragging');
 }
-
 
 /**Function Area */
 function dragOver(e){
@@ -111,19 +116,60 @@ function drop(e){
        // um item nao pode estar em dois lugares ao mesmo tempo
        // portanto ele pode retirar de um lugar e add em outro 
 
+       updateAreas();
+
    }
 
 }
 
 /**Funcoes para transformar a neutralArea em zona de descarga também */
-function dragOverNeutral(){
+function dragOverNeutral(e){
+    e.preventDefault();
+    e.currentTarget.classList.add('hover');
 
 }
 
-function dragLeaveNeutral(){
+function dragLeaveNeutral(e){
+    e.currentTarget.classList.remove('hover');
+}
+
+function dropNeutral(e){
+    e.currentTarget.classList.remove('hover'); 
+    let dragItem = document.querySelector('.item.dragging');
+    e.currentTarget.appendChild( dragItem ); 
+    updateAreas();
+}
+
+/**Funções de lógica -  logic functions   */
+function updateAreas(){
+    //será rodadas nos dois drop
+
+    //em cda uma das areas ve se tem item dentro 
+    //se tem item, verificar 
+    document.querySelectorAll('.area').forEach(area=>{
+        //vreifica se tem algum item
+        //se tiver pega o nome e adiciona na area
+        //pegar o nome da area
+        let name = area.getAttribute('data-name');
+
+        //se tem item dentro da area
+        if( area.querySelector('.item') !== null){
+            areas[name] = area.querySelector('.item').innerHTML;
+            //console.log( area.querySelector('.item').innerHTML );
+
+        }else{
+            areas[name] = null;
+        }
+    });
+
+    // console.log( areas );
+
+    //agora deixar a borda verde, quando todos estiverem iguais 
+    if( (areas.a ==='1') && (areas.b ==='2') && ( areas.c ==='3')  ){
+        document.querySelector('.areas').classList.add('correct');
+    }else{
+        document.querySelector('.areas').classList.remove('correct');
+    }
 
 }
 
-function dropNeutral(){
-    
-}
