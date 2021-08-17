@@ -35,6 +35,13 @@ document.querySelectorAll('.area').forEach(area => {
 //drop - solta o item no local
 //ha outros , mas estes  são os principais
 
+
+//agora transformar o 'neutralArea' em uma zona de descarga também
+document.querySelector('.neutralArea').addEventListener( 'dragover', dragOverNeutral );
+document.querySelector('.neutralArea').addEventListener( 'dragleave', dragLeaveNeutral);
+document.querySelector('.neutralArea').addEventListener( 'drop', dropNeutral);
+
+
 /**Functions Item */
 //class dragging - deixa a cor do elemento opaca
 function dragStart(e){
@@ -51,15 +58,18 @@ function dragEnd(e){
 function dragOver(e){
     //quando o mouse esta passando com a imagem por cima da '.area'
     //console.log("Passou por cima ");
-    //liberar para descarga 
-    e.preventDefault();
-    //comportamento padrão  é NEGAR o drop - preventDefault para o comportamento padrão, 
-    //portanto libera o drop
-    //quando arrasta para a área de descarga e o descarregamento esta liberado 
-    // o ícone do mouse fica com o simbolo de '+'
 
-    //mudando o fundo das áreas que podem receber descarga do elemento 
-    e.currentTarget.classList.add('hover');
+    if( e.currentTarget.querySelector('.item') === null){
+        //liberar para descarga 
+        e.preventDefault();
+        //comportamento padrão  é NEGAR o drop - preventDefault para o comportamento padrão, 
+        //portanto libera o drop
+        //quando arrasta para a área de descarga e o descarregamento esta liberado 
+        // o ícone do mouse fica com o simbolo de '+'
+
+        //mudando o fundo das áreas que podem receber descarga do elemento 
+        e.currentTarget.classList.add('hover');
+    }
 
     
 }
@@ -80,11 +90,40 @@ function drop(e){
     e.currentTarget.classList.remove('hover');
 
     //soltar o elemento na área selecionada
-    //primeiro identificar quem é o item que esta sendo seelcionado
-    let dragItem = document.querySelector('.item.dragging');
-   // console.log(dragItem);
+
 
    //verificar se na área ja esta ocupada 
-   //[30 minutos de video ]
+   if( e.currentTarget.querySelector('.item') === null){
+        //se dentro do currentTarget não houver a classe Item( sem conteudo )
 
+              
+        //primeiro identificar quem é o item que esta sendo seelcionado
+        let dragItem = document.querySelector('.item.dragging');
+        // console.log(dragItem);
+       
+       
+       
+       
+
+       //remover da área de cima e adicionar na area de baixo 
+       e.currentTarget.appendChild( dragItem );
+       //adicione um item no final ( dentro)
+       // um item nao pode estar em dois lugares ao mesmo tempo
+       // portanto ele pode retirar de um lugar e add em outro 
+
+   }
+
+}
+
+/**Funcoes para transformar a neutralArea em zona de descarga também */
+function dragOverNeutral(){
+
+}
+
+function dragLeaveNeutral(){
+
+}
+
+function dropNeutral(){
+    
 }
