@@ -49,4 +49,5 @@ Atributo do HTML **draggable**, conforme o próprio VSCode significa: "Um atribu
 
 ![image](https://user-images.githubusercontent.com/1613816/129768913-faff8d8c-7e17-4cff-a5db-811fba33c242.png)
 
-
+**Concluído** o Módulo 11: Desafio 7 Projetos em 7 Dias (7 aulas)
+Vamos aos próximos desafios!!!
